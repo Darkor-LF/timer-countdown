@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #be4163;
+    background-color: #df879f;
+}
+
+input {
+    height: 2rem;
+    width: 50px;
+    text-align: center;
+}
+
+.on-view {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+}
+.on-view label,input, button{
+    margin: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color:#be4163;
+    border: 1px  #df879f;
+}
+
+.timer {
+    font-size: 6rem;
+    text-align: center;
+    padding: 50px;
+    padding-bottom: 100px;
+}
+
+.timer p{
+    font-family: 'Exo 2', sans-serif;
+}
+
+.off-view {
+    display: none;
+}

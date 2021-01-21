@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <title>Timer twitch</title>
+</head>
+
+<body>
+
+    <div class="on-view">
+        <label>Minutos:</label> <input type='number' id='min'></input>
+        <label>Segundos:</label> <input type='number' id='sec'></input>
+        <button id='start' onclick="startCountDown()">Iniciar</button>
+    </div>
+        
+ <div class='off-view timer'>Empezamos en:
+     <p id="time">XX:YY</p></div> 
+
+</body>
+<script >
+    const startTimer = (duration, display) => {
+        let timer = duration, minutes, seconds
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10)
+
+            minutes = minutes < 10 ? "0" + minutes : minutes
+            seconds = seconds < 10 ? "0" + seconds : seconds
+
+            display.textContent = minutes + ":" + seconds
+
+            if (--timer < 0) {
+                timer = duration
+            }
+        }, 1000)
+    }
+
+    const startCountDown = () => {
+        let minutes = document.querySelector('#min')
+        let seconds = document.querySelector('#sec')
+        
+        let countDown = 60 * parseInt(minutes.value) + parseInt(seconds.value)
+        display = document.querySelector('#time')
+        startTimer(countDown, display)
+        
+        document.querySelector('.on-view').classList.toggle('off-view')
+        document.querySelector('.timer').classList.remove('off-view')
+    
+        
+    }
+
+</script>
+
+</html>
