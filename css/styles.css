@@ -6,7 +6,8 @@
 body {
     font-family: 'PT Sans', sans-serif;
     font-size: 1.5rem;
-    color: #be4163;
+/*     color: #be4163; */
+    color: rgb(250,241,236);
     background-color: #df879f;
 }
 
